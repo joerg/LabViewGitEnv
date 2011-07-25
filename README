@@ -1,0 +1,5 @@
+This represents everything that is needed to hold your LabView projects und version control with GIT.
+
+There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for linux, mac and windows.
+
+More README coming soon...
