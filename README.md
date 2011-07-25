@@ -20,13 +20,13 @@ You can install this system wide or per user. If you have administrative rights 
 Open GIT Bash as Administrator and issue the following commands
 
 	mkdir -p /usr/local
-	git clone <coming soon> /usr/local/
+	git clone git@github.com:joerg/LabViewGitEnv.git /usr/local/
 	
 ### Per User install
 
 Open GIT Bash and issue the following commands
 	
-	git clone <coming soon> ~/
+	git clone git@github.com:joerg/LabViewGitEnv.git ~/
 
 Linux and Mac
 -------------
