@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Read System wide config
-if [ -e /usr/etc/LabViewConfig.sh ]
+if [ -e /usr/local/etc/LabViewConfig.sh ]
 then
-	source /usr/etc/LabViewConfig.sh
+	source /usr/local/etc/LabViewConfig.sh
 fi
 # Read User Config
 if [ -e ~/etc/LabViewConfig.sh ]
