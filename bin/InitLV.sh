@@ -26,7 +26,7 @@ case "$OPT" in
 	;;
 	--local)
 		GIT_CONFIG_OPTS="--local"
-		ATTRIBUTES_FILE=.git/info/gitattributes
+		ATTRIBUTES_FILE=.git/info/attributes
 	;;
 	*) 
 		echo -e "Usage: \"$0 option\" where option can be one of the following
