@@ -16,7 +16,6 @@ then
 	source ./LabViewConfig.sh
 fi
 
-WD=$(echo "$PWD" | sed -e  "${PATHFIX}")
 LOCAL=$(echo "$2" | sed -e "${PATHFIX}")
 REMOTE=$(echo "$5" | sed -e  "${PATHFIX}")
 

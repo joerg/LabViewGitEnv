@@ -16,11 +16,10 @@ then
 	source ./LabViewConfig.sh
 fi
 
-DIR="$(echo "$1" | sed -e "${PATHFIX}")\\"
-BASE=${DIR}$(echo "$2" | sed -e "${TRAILFIX}")
-LOCAL=${DIR}$(echo "$3" | sed -e "${TRAILFIX}")
-REMOTE=${DIR}$(echo "$4" | sed -e  "${TRAILFIX}")
+BASE="${WD}$(echo "$2" | sed -e "${TRAILFIX}")"
+LOCAL="${WD}$(echo "$3" | sed -e "${TRAILFIX}")"
+REMOTE="${WD}$(echo "$4" | sed -e  "${TRAILFIX}")"
 MERGED=$LOCAL
 
 # Execute Compare
-"${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" ${BASE} ${LOCAL} ${REMOTE} ${MERGED}
+"${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${LOCAL}" "${REMOTE}" "${MERGED}"
