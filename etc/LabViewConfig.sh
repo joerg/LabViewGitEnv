@@ -13,7 +13,7 @@ PATHFIX='s/\//\\/g'
 # sed RegEx to replace trailing ./ with \
 TRAILFIX='s/^.\//\\/'
 # Make Path suitable for Windows (C: instead of /c)
-MKWINPATH='s/\/\([a-z]\)/\U\1:/'
+MKWINPATH='s/^\/\([a-z]\)/\U\1:/'
 # Check if Path is abolsute: if either ^/@/ or ^@:\ where @ is the drive letter
 ABSPATH='^([a-zA-Z]:\\|/[a-zA-Z]/)'
 
