@@ -25,14 +25,41 @@ Open GIT Bash as Administrator and issue the following commands
 ### Per User install
 
 Open GIT Bash and issue the following commands
-	
-	git clone -b windows git://github.com/joerg/LabViewGitEnv.git ~/
+
+	git clone -b windows git://github.com/joerg/LabViewGitEnv.git /tmp/LabViewGitEnv
+	find /tmp/LabViewGitEnv -maxdepth 1 -mindepth 1 -exec cp -r {} ~ \;
 
 Linux and Mac
 -------------
 
 Work on this is not done yet, but I suppose it should be pretty simple to do so. If you are using LabView on Linux or Mac and want to use it with GIT then please contact me and we can surely figure this out pretty fast.
 
+Update LabViewGitEnv
+--------------------
+
+To update you just have to open a GIT Bash, go to the folder you installed it to ( /usr/local for system wide installs, ~ for per user installs ) and issue the following command
+
+	git pull
+
+Configure GIT to use LabViewGitEnv
+==================================
+
+To configure GIT to use LabViewGitEnv just open Git Bash on Windows or any Shell on Linux and Mac and issue the following
+
+	InitLV OPTION
+
+where OPTION can be one of the following
+
+	--system
+Cofigures GIT system wide. You need administrative rights to do that, so on Windows you need to have Git Bash opened as Administrator and on Linux and Mac you have to be root or use sudo. This is recommended since GIT will be configured to only use LabViewGitEnv for LabView file types.
+
+	--global
+Configures user specific settings.
+
+	--local
+Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
+
+You may also need to edit you LabView path. To do so edit your LabViewConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
 
 Copyright
 =========
