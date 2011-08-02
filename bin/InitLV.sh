@@ -25,6 +25,7 @@ case "$OPT" in
 		ATTRIBUTES_FILE="~/.gitattributes"
 	;;
 	--local)
+		git status &> /dev/null || { echo "You are not in a GIT Repository"; exit 0; }
 		GIT_CONFIG_OPTS="--local"
 		ATTRIBUTES_FILE=".git/info/attributes"
 	;;
