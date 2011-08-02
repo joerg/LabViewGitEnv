@@ -18,15 +18,15 @@ function do_git_config {
 case "$OPT" in
 	--system)
 		GIT_CONFIG_OPTS="--system"
-		ATTRIBUTES_FILE=/etc/gitattributes
+		ATTRIBUTES_FILE="/etc/gitattributes"
 	;;
 	--global)
 		GIT_CONFIG_OPTS="--global"
-		ATTRIBUTES_FILE=~/.gitattributes
+		ATTRIBUTES_FILE="~/.gitattributes"
 	;;
 	--local)
 		GIT_CONFIG_OPTS="--local"
-		ATTRIBUTES_FILE=.git/info/attributes
+		ATTRIBUTES_FILE=".git/info/attributes"
 	;;
 	*) 
 		echo -e "Usage: \"$0 option\" where option can be one of the following
