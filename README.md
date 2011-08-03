@@ -60,6 +60,34 @@ Configures user specific settings.
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
 You may also need to edit you LabView path. To do so edit your LabViewConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
+If you can't find those two you may use the following commands to search through your system
+
+	find / -type f -name LabVIEW.exe -print 2> /dev/null
+	find / -type d -name "LabVIEW Compare" -print 2> /dev/null
+
+The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder).
+
+Example usage
+=============
+
+Assuming you have a `master` branch with a few commits and `feature` branch and you have currently checked out `master`. Calling
+
+	git diff feature
+
+will bring up [LVCompare.exe](http://zone.ni.com/reference/en-XX/help/371361G-01/lvhowto/configlvcomp_thirdparty/) with the correct attributes and show you the differences between `master` and `feature`. To merge those branches you can use
+
+	git merge feature
+
+which will bring up [LVMerge.exe](http://zone.ni.com/reference/en-XX/help/371361G-01/lvhowto/configmerge_thirdparty/). This will show you 4 different versions: Base, which is the common ancestor of `feature` and `master`, Theirs which is the vi in `feature`, Yours, which is the vi in `master` and finally the merged vi. Just edit the merged vi if necessary, save it and press close and GIT will automagically create a nice merge commit.
+Attention: When calling
+
+	git merge feature master
+
+GIT will not call LVMerge.exe at first but will try to do an internal merge which will fail. You will have to use
+
+	git mergetool -t labview
+
+to call LVMerge.exe and do the merge.
 
 Copyright
 =========
