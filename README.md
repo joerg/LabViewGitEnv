@@ -1,5 +1,5 @@
-LabViewEnv
-==========
+LabViewGitEnv
+=============
 
 This represents everything that is needed to hold your LabView projects under version control with GIT.
 With this you can configure GIT to use LabViews diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
