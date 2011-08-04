@@ -92,4 +92,4 @@ to call LVMerge.exe and do the merge.
 Copyright
 =========
 
-Copyright (c) 2011 Jörg Herzinger.
+Copyright (c) 2011 Jörg Herzinger, see LICENSE for details.
