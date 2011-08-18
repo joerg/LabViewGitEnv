@@ -83,7 +83,7 @@ Attention: When calling
 
 	git merge feature master
 
-GIT will not call LVMerge.exe at first but will try to do an internal merge which will fail. You will have to use
+GIT will not call LVMerge.exe at first but will try to do an internal merge which will fail. You will then have to use
 
 	git mergetool -t labview
 
