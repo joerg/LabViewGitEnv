@@ -46,7 +46,7 @@ Configure GIT to use LabViewGitEnv
 
 To configure GIT to use LabViewGitEnv just open Git Bash on Windows or any Shell on Linux and Mac and issue the following
 
-	InitLV OPTION
+	InitLV.sh OPTION
 
 where OPTION can be one of the following
 
