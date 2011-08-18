@@ -60,10 +60,10 @@ Configures user specific settings.
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
 You may also need to edit you LabView path. To do so edit your LabViewConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
-If you can't find those two you may use the following commands to search through your system
+If you can't find those two you may use the following commands to search through your system (replace the "c" with whatever drive letter your LabView is installed on)
 
-	find / -type f -name LabVIEW.exe -print 2> /dev/null
-	find / -type d -name "LabVIEW Compare" -print 2> /dev/null
+	find /c -type f -name LabVIEW.exe -print 2> /dev/null
+	find /c -type d -name "LabVIEW Compare" -print 2> /dev/null
 
 The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder).
 
