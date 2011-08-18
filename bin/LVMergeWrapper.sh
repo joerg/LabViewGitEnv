@@ -23,3 +23,12 @@ MERGED=$LOCAL
 
 # Execute Compare
 "${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${LOCAL}" "${REMOTE}" "${MERGED}"
+
+while true; do
+    read -p "Was the merge successful (yes/no)?" yn
+    case $yn in
+        [Yy]* ) echo "Merge successful."; exit 0;;
+        [Nn]* ) echo "Merge unsuccessful. Please fix with 'git mergetool -t labview'"; exit 255;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
