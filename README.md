@@ -53,7 +53,7 @@ Configure GIT to use LabViewGitEnv
 
 To configure GIT to use LabViewGitEnv just open Git Bash on Windows or any Shell on Linux and Mac and issue the following
 
-	InitLV.sh OPTION
+	LVInit.sh OPTION
 
 where OPTION can be one of the following
 
@@ -66,7 +66,7 @@ Configures user specific settings.
 	--local
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
-You may also need to edit you LabView path. To do so edit your LabViewConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
+You may also need to edit you LabView path. To do so edit your LVConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
 If you can't find those two you may use the following commands to search through your system (replace the "c" with whatever drive letter your LabView is installed on)
 
 	find /c -type f -name LabVIEW.exe -print 2> /dev/null
