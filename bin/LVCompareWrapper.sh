@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # Read System wide config
-if [ -e /usr/local/etc/LabViewConfig.sh ]
+if [ -e /usr/local/etc/LVConfig.sh ]
 then
-	source /usr/local/etc/LabViewConfig.sh
+	source /usr/local/etc/LVConfig.sh
 fi
 # Read User Config
-if [ -e ~/etc/LabViewConfig.sh ]
+if [ -e ~/etc/LVConfig.sh ]
 then
-	source ~/etc/LabViewConfig.sh
+	source ~/etc/LVConfig.sh
 fi
 # Read Local Config
-if [ -e ./LabViewConfig.sh ]
+if [ -e ./LVConfig.sh ]
 then
-	source ./LabViewConfig.sh
+	source ./LVConfig.sh
 fi
 
 LOCAL=$(echo "$2" | sed -e "${PATHFIX}")
