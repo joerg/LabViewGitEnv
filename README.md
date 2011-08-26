@@ -1,13 +1,15 @@
 LabViewGitEnv
 =============
 
-This represents everything that is needed to hold your LabView projects under version control with GIT.
-With this you can configure GIT to use LabViews diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
+This represents everything that is needed to hold your LabView projects under version control with GIT. With this you can configure GIT to use LabViews diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
+
+To view the actual code switch to the branch according to your operating system. Currently only windows is supported, but porting this to linux or mac should be fairly easy. Please contact me if you plan to do so.
 
 Usage
 =====
 
 There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for linux, mac and windows.
+
 In order to run this you will need LabView, GIT and bash which comes with msysgit for Windows users and should be preinstalled on any *nix system.
 
 Usage on Windows
@@ -67,6 +69,7 @@ Configures user specific settings.
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
 You may also need to edit you LabView path. To do so edit your LVConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
+
 If you can't find those two you may use the following commands to search through your system (replace the "c" with whatever drive letter your LabView is installed on)
 
 	find /c -type f -name LabVIEW.exe -print 2> /dev/null
