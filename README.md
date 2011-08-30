@@ -75,7 +75,7 @@ If you can't find those two you may use the following commands to search through
 	find /c -type f -name LabVIEW.exe -print 2> /dev/null
 	find /c -type d -name "LabVIEW Compare" -print 2> /dev/null
 
-The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder).
+The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder without the trailing slash).
 
 Example usage
 =============
