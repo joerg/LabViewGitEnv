@@ -24,7 +24,7 @@ MERGED=$LOCAL
 # Execute Compare
 "${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${LOCAL}" "${REMOTE}" "${MERGED}"
 
-while true; do
+for i in {0..99}; do
     read -p "Was the merge successful (yes/no)?" yn
     case $yn in
         [Yy]* ) echo "Merge successful."; exit 0;;
@@ -32,3 +32,9 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
+
+echo "It seems you either can't type or you are using gitk. For the latter "
+echo "one I have no means of knowing wether the merge succeeded or not, "
+echo "so I have to stop the merge and you have to commit it manually."
+
+exit 255
