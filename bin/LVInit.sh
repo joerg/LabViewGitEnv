@@ -8,7 +8,7 @@ function do_git_config {
 	$1 merge.labview.name "LabView Merge Driver"
 	$1 merge.labview.driver "LVMergeWrapper.sh \"\$PWD\" \"%O\" \"%A\" \"%B\""
 	$1 mergetool.labview.cmd "LVMergeWrapper.sh \"\$PWD\" \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\""
-	$1 mergetool.labview.trustExitCode false
+	$1 mergetool.labview.trustExitCode true
 	if [ $OPT == "--global" ]
 	then
 		$1 core.attributesfile $ATTRIBUTES_FILE
