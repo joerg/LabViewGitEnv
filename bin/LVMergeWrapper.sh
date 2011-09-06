@@ -16,9 +16,9 @@ then
 	source ./LVConfig.sh
 fi
 
-BASE="${WD}\\$(echo "$2" | sed -e "${TRAILFIX}")"
-LOCAL="${WD}\\$(echo "$3" | sed -e "${TRAILFIX}")"
-REMOTE="${WD}\\$(echo "$4" | sed -e  "${TRAILFIX}")"
+BASE="${WD}\\$(echo "$1" | sed -e "${TRAILFIX}")"
+LOCAL="${WD}\\$(echo "$2" | sed -e "${TRAILFIX}")"
+REMOTE="${WD}\\$(echo "$3" | sed -e  "${TRAILFIX}")"
 MERGED=$LOCAL
 
 # Execute Compare

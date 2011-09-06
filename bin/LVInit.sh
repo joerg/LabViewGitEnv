@@ -6,8 +6,8 @@ function do_git_config {
 	$1 diff.labview.command "LVCompareWrapper.sh"
 	$1 merge.labview.tool labview
 	$1 merge.labview.name "LabView Merge Driver"
-	$1 merge.labview.driver "LVMergeWrapper.sh \"\$PWD\" \"%O\" \"%A\" \"%B\""
-	$1 mergetool.labview.cmd "LVMergeWrapper.sh \"\$PWD\" \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\""
+	$1 merge.labview.driver "LVMergeWrapper.sh \"%O\" \"%A\" \"%B\""
+	$1 mergetool.labview.cmd "LVMergeWrapper.sh \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\""
 	$1 mergetool.labview.trustExitCode true
 	if [ $OPT == "--global" ]
 	then
