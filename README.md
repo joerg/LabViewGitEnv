@@ -49,6 +49,9 @@ To update you just have to open a GIT Bash, go to the folder you installed it to
 	git checkout local
 	git rebase windows local
 	git stash pop
+	LVInit.sh (--system|--global|--local)
+
+The last command is just needed in case some changes happened for git-config. However, you should always run this to make sure everything is configured corretly.
 
 Configure GIT to use LabViewGitEnv
 ==================================
