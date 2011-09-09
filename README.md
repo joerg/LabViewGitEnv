@@ -24,6 +24,12 @@ Open GIT Bash as Administrator and issue the following commands
 	mkdir -p /usr/local
 	git clone -b windows git://github.com/joerg/LabViewGitEnv.git /usr/local/
 	cd /usr/local && git checkout -b local
+
+If your are planning to use GIT Gui, open cmd.exe as Administrator and issue the following command
+
+	setx Path "%Path%;<GIT_INSTALL_PATH>\local\bin /M"
+
+, where <GIT_INSTALL_PATH> mostly is something like C:\Programme Files\Git.
 	
 ### Per User install
 
@@ -32,6 +38,12 @@ Open GIT Bash and issue the following commands
 	git clone -b windows git://github.com/joerg/LabViewGitEnv.git /tmp/LabViewGitEnv
 	find /tmp/LabViewGitEnv -maxdepth 1 -mindepth 1 -exec cp -r {} ~ \;
 	cd ~ && git checkout -b local
+
+If your are planning to use GIT Gui, open cmd.exe and issue the following command
+
+	setx Path "%Path%;C:\Users\<USER_NAME>\bin"
+
+, where <USER_NAME> is your windows user name.
 
 Linux and Mac
 -------------
