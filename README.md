@@ -27,9 +27,9 @@ Open GIT Bash as Administrator and issue the following commands
 
 If your are planning to use GIT Gui, open cmd.exe as Administrator and issue the following command
 
-	setx Path "%Path%;<GIT_INSTALL_PATH>\local\bin /M"
+	setx Path "%Path%;GIT_INSTALL_PATH\local\bin /M"
 
-, where <GIT_INSTALL_PATH> mostly is something like C:\Programme Files\Git.
+, where GIT_INSTALL_PATH mostly is something like C:\Programme Files\Git.
 	
 ### Per User install
 
@@ -41,9 +41,9 @@ Open GIT Bash and issue the following commands
 
 If your are planning to use GIT Gui, open cmd.exe and issue the following command
 
-	setx Path "%Path%;C:\Users\<USER_NAME>\bin"
+	setx Path "%Path%;C:\Users\USER_NAME\bin"
 
-, where <USER_NAME> is your windows user name.
+, where USER_NAME is your windows user name.
 
 Linux and Mac
 -------------
