@@ -92,6 +92,13 @@ If you can't find those two you may use the following commands to search through
 
 The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder without the trailing slash).
 
+GIT Gui and other graphical tools
+=================================
+
+Full support is currently only given for GIT Gui. If you have set your Path variable according to the installation instructions almost everything will work out of the box.
+
+To Diff LabView files you have to open gitk and configure the according option. On Windows open GIT Gui and view some project tree to open gitk. In gitk select Edit -> Options and choose the according LVGitKExternalDiffWrapper.
+
 Example usage
 =============
 
