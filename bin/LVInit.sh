@@ -4,6 +4,10 @@ OPT=$(echo $1 | tr "[:upper:]" "[:lower:]")
 
 function do_git_config {
 	$1 diff.labview.command "LVCompareWrapper.sh"
+	$1 diff.tool = labview
+	$1 diff.guitool = labview
+	$1 difftool.labview.cmd = "LVCompareWrapper.sh \"\$LOCAL\" \"\$REMOTE\""
+	$1 difftool.labview.prompt = false
 	$1 merge.labview.tool labview
 	$1 merge.labview.name "LabView Merge Driver"
 	$1 merge.labview.driver "LVMergeWrapper.sh \"%O\" \"%A\" \"%B\""
@@ -44,4 +48,4 @@ do_git_config "git config ${GIT_CONFIG_OPTS}"
 # Create attributes file if missing and write specifics
 ATTRIBUTES_FILE_ABSOLUTE=$(echo ${ATTRIBUTES_FILE})
 touch ${ATTRIBUTES_FILE_ABSOLUTE}
-echo -e "*.vi diff=labview mergetool=labview merge=labview\n" >> ${ATTRIBUTES_FILE_ABSOLUTE}
+echo -e "*.vi diff=labview difftool=labview mergetool=labview merge=labview\n" >> ${ATTRIBUTES_FILE_ABSOLUTE}
