@@ -4,10 +4,10 @@ OPT=$(echo $1 | tr "[:upper:]" "[:lower:]")
 
 function do_git_config {
 	$1 diff.labview.command "LVCompareWrapper.sh"
-	$1 diff.tool = labview
-	$1 diff.guitool = labview
-	$1 difftool.labview.cmd = "LVCompareWrapper.sh \"\$LOCAL\" \"\$REMOTE\""
-	$1 difftool.labview.prompt = false
+	$1 diff.labview.tool labview
+	$1 diff.labview.guitool labview
+	$1 difftool.labview.cmd "LVCompareWrapper.sh \"\$LOCAL\" \"\$REMOTE\""
+	$1 difftool.labview.prompt false
 	$1 merge.labview.tool labview
 	$1 merge.labview.name "LabView Merge Driver"
 	$1 merge.labview.driver "LVMergeWrapper.sh \"%O\" \"%A\" \"%B\""
