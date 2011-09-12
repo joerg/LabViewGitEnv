@@ -19,7 +19,7 @@ fi
 BASE="${WD}\\$(echo "$1" | sed -e "${TRAILFIX}")"
 LOCAL="${WD}\\$(echo "$2" | sed -e "${TRAILFIX}")"
 REMOTE="${WD}\\$(echo "$3" | sed -e  "${TRAILFIX}")"
-MERGED=$LOCAL
+MERGED=$REMOTE
 
 # Execute Compare
 "${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${LOCAL}" "${REMOTE}" "${MERGED}"
