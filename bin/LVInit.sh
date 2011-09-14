@@ -48,4 +48,6 @@ do_git_config "git config ${GIT_CONFIG_OPTS}"
 # Create attributes file if missing and write specifics
 ATTRIBUTES_FILE_ABSOLUTE=$(echo ${ATTRIBUTES_FILE})
 touch ${ATTRIBUTES_FILE_ABSOLUTE}
-echo -e "*.vi diff=labview difftool=labview mergetool=labview merge=labview\n" >> ${ATTRIBUTES_FILE_ABSOLUTE}
+
+CONT=$(cat ~/etc/LVGitAttributes.tpl 2>/dev/null || cat /usr/local/etc/LVGitAttributes.tpl 2>/dev/null)
+grep -q "${CONT}" ${ATTRIBUTES_FILE_ABSOLUTE} || echo "${CONT}" >> ${ATTRIBUTES_FILE_ABSOLUTE}
