@@ -22,7 +22,7 @@ REMOTE="${WD}\\$(echo "$3" | sed -e  "${TRAILFIX}")"
 MERGED=$REMOTE
 
 # Execute Compare
-"${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${LOCAL}" "${REMOTE}" "${MERGED}"
+"${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${REMOTE}" "${LOCAL}" "${MERGED}"
 
 for i in {0..99}; do
     read -p "Was the merge successful (yes/no)?" yn
