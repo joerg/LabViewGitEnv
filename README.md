@@ -15,6 +15,19 @@ In order to run this you will need LabView, GIT and bash which comes with msysgi
 Usage on Windows
 ----------------
 
+### Quick start
+
+To download and install LabViewGitEnv for every GIT user on your system, open a GIT Bash shell and issue the following commands
+
+	mkdir -p /c/repos/other && cd /c/repos/other
+	git clone -b windows git://github.com/joerg/LabViewGitEnv.git
+	cd LabViewGitEnv
+	bin/LVBootstrap.sh --system
+
+, where `/c/repos/other` is where you place your forked GitHub projects.
+
+## Full details
+
 You can install this system wide or per user. If you have administrative rights I suggest installing it system wide.
 
 ### System wide install
@@ -29,7 +42,7 @@ If your are planning to use GIT Gui, open cmd.exe as Administrator and issue the
 
 	setx Path "%Path%;GIT_INSTALL_PATH\local\bin /M"
 
-, where GIT_INSTALL_PATH mostly is something like C:\Programme Files\Git.
+, where `GIT_INSTALL_PATH` mostly is something like C:\Programme Files\Git.
 	
 ### Per User install
 
@@ -39,11 +52,11 @@ Open GIT Bash and issue the following commands
 	find /tmp/LabViewGitEnv -maxdepth 1 -mindepth 1 -exec cp -r {} ~ \;
 	cd ~ && git checkout -b local
 
-If your are planning to use GIT Gui, open cmd.exe and issue the following command
+If you are planning to use GIT Gui, open cmd.exe and issue the following command
 
 	setx Path "%Path%;C:\Users\USER_NAME\bin"
 
-, where USER_NAME is your windows user name.
+, where `USER_NAME` is your windows user name.
 
 Linux and Mac
 -------------
