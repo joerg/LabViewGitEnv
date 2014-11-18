@@ -21,12 +21,9 @@ LOCAL="${WD}\\$(echo "$2" | sed -e "${TRAILFIX}")"
 REMOTE="${WD}\\$(echo "$3" | sed -e  "${TRAILFIX}")"
 MERGED=${REMOTE}
 
-if type detect_labview_version &> /dev/null; then
-	detect_labview_version "${BASE}"
-	fix_paths
-fi
-
 # Execute Compare
+detect_labview_version "${BASE}"
+fix_paths
 "${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${REMOTE}" "${LOCAL}" "${MERGED}"
 
 for i in {0..99}; do

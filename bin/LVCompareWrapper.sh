@@ -23,10 +23,7 @@ REMOTE=$(echo "$5" | sed -e  "${PATHFIX}")
 echo "${LOCAL}" | grep -qE ${ABSPATH} || LOCAL="${WD}\\${LOCAL}"
 echo "${REMOTE}" | grep -qE ${ABSPATH} || REMOTE="${WD}\\${REMOTE}"
 
-if type detect_labview_version &> /dev/null; then
-	detect_labview_version "${LOCAL}"
-	fix_paths
-fi
-
 # Execute Compare
+detect_labview_version "${LOCAL}"
+fix_paths
 "${LabViewShared}/LabVIEW Compare/LVCompare.exe" "${LOCAL}" "${REMOTE}" "-lvpath" "${LabViewBin}"
