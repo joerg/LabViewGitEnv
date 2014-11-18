@@ -1,16 +1,16 @@
 LabViewGitEnv
 =============
 
-This represents everything that is needed to hold your LabView projects under version control with GIT. With this you can configure GIT to use LabViews diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
+This represents everything that is needed to hold your LabVIEW projects under version control with GIT. With this you can configure GIT to use LabVIEW's diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
 
-To view the actual code switch to the branch according to your operating system. Currently only windows is supported, but porting this to linux or mac should be fairly easy. Please contact me if you plan to do so.
+To view the actual code switch to the branch according to your operating system. Currently only Windows is supported, but porting this to linux or Mac should be fairly easy. Please contact me if you plan to do so.
 
 Usage
 =====
 
-There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for linux, mac and windows.
+There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for linux, mac and Windows.
 
-In order to run this you will need LabView, GIT and bash which comes with msysgit for Windows users and should be preinstalled on any *nix system.
+In order to run this you will need LabVIEW, GIT and bash which comes with msysgit for Windows users and should be preinstalled on any *nix system.
 
 Usage on Windows
 ----------------
@@ -20,7 +20,7 @@ Usage on Windows
 To download and install LabViewGitEnv for every GIT user on your system, open a GIT Bash shell and issue the following commands
 
 	mkdir -p /c/repos/other && cd /c/repos/other
-	git clone -b windows git://github.com/joerg/LabViewGitEnv.git
+	git clone -b windows git://github.com/wireddown/LabViewGitEnv.git
 	cd LabViewGitEnv
 	bin/LVBootstrap.sh --system
 
@@ -61,7 +61,7 @@ If you are planning to use GIT Gui, open cmd.exe and issue the following command
 Linux and Mac
 -------------
 
-Work on this is not done yet, but I suppose it should be pretty simple to do so. If you are using LabView on Linux or Mac and want to use it with GIT then please contact me and we can surely figure this out pretty fast.
+Work on this is not done yet, but I suppose it should be pretty simple to do so. If you are using LabVIEW on Linux or Mac and want to use it with GIT then please contact me and we can surely figure this out pretty fast.
 
 Update LabViewGitEnv
 --------------------
@@ -88,7 +88,7 @@ To configure GIT to use LabViewGitEnv just open Git Bash on Windows or any Shell
 where OPTION can be one of the following
 
 	--system
-Cofigures GIT system wide. You need administrative rights to do that, so on Windows you need to have Git Bash opened as Administrator and on Linux and Mac you have to be root or use sudo. This is recommended since GIT will be configured to only use LabViewGitEnv for LabView file types.
+Cofigures GIT system wide. You need administrative rights to do that, so on Windows you need to have Git Bash opened as Administrator and on Linux and Mac you have to be root or use sudo. This is recommended since GIT will be configured to only use LabViewGitEnv for LabVIEW file types.
 
 	--global
 Configures user specific settings.
@@ -96,9 +96,9 @@ Configures user specific settings.
 	--local
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
-You may also need to edit you LabView path. To do so edit your LVConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabView binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
+You may also need to edit you LabVIEW path. To do so edit your LVConfig.sh in either /usr/local/etc or ~/etc and adapt the LabViewBin and LabViewShared variables. LabViewBin represents the LabVIEW binary you want to use, LabViewShared represents the folder where to find LabVIEW Compare and LabVIEW Merge.
 
-If you can't find those two you may use the following commands to search through your system (replace the "c" with whatever drive letter your LabView is installed on)
+If you can't find those two you may use the following commands to search through your system (replace the "c" with whatever drive letter your LabVIEW is installed on)
 
 	find /c -type f -name LabVIEW.exe -print 2> /dev/null
 	find /c -type d -name "LabVIEW Compare" -print 2> /dev/null
@@ -110,7 +110,7 @@ GIT Gui and other graphical tools
 
 Full support is currently only given for GIT Gui. If you have set your Path variable according to the installation instructions almost everything will work out of the box.
 
-To Diff LabView files you have to open gitk and configure the according option. On Windows open GIT Gui and view some project tree to open gitk. In gitk select Edit -> Options and choose the according LVGitKExternalDiffWrapper.
+To Diff LabVIEW files you have to open gitk and configure the according option. On Windows open GIT Gui and view some project tree to open gitk. In gitk select Edit -> Options and choose the according LVGitKExternalDiffWrapper.
 
 Example usage
 =============
@@ -138,3 +138,5 @@ Copyright
 =========
 
 Copyright (c) 2011 Jörg Herzinger, see LICENSE for details.
+
+Copyright (c) 2014 Joe Friedrichsen
