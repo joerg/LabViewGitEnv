@@ -19,7 +19,12 @@ fi
 BASE="${WD}\\$(echo "$1" | sed -e "${TRAILFIX}")"
 LOCAL="${WD}\\$(echo "$2" | sed -e "${TRAILFIX}")"
 REMOTE="${WD}\\$(echo "$3" | sed -e  "${TRAILFIX}")"
-MERGED=$REMOTE
+MERGED=${REMOTE}
+
+if type detect_labview_version &> /dev/null; then
+	detect_labview_version "${BASE}"
+	fix_paths
+fi
 
 # Execute Compare
 "${LabViewShared}/LabVIEW Merge/LVMerge.exe" "${LabViewBin}" "${BASE}" "${REMOTE}" "${LOCAL}" "${MERGED}"
@@ -34,7 +39,7 @@ for i in {0..99}; do
 done
 
 echo "It seems you either can't type or you are using gitk. For the latter "
-echo "one I have no means of knowing wether the merge succeeded or not, "
+echo "one I have no means of knowing whether the merge succeeded or not, "
 echo "so I have to stop the merge and you have to commit it manually."
 
 exit 255

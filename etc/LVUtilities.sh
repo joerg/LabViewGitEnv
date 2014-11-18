@@ -33,13 +33,14 @@ anything else will print this text"
 function install_drivers {
 	REPO_ROOT_ABSOLUTE="$(echo $1)"
 	ENV_ROOT_ABSOLUTE="$(echo ${ENV_ROOT})"
-	mkdir -p "$ENV_ROOT_ABSOLUTE/bin" "$ENV_ROOT_ABSOLUTE/etc"
+	mkdir -p "${ENV_ROOT_ABSOLUTE}/bin" "${ENV_ROOT_ABSOLUTE}/etc"
 
-	cp "$REPO_ROOT_ABSOLUTE/bin/LVCompareWrapper.sh" "$ENV_ROOT_ABSOLUTE/bin"
-	cp "$REPO_ROOT_ABSOLUTE/bin/LVGitKExternalDiffWrapper.bat" "$ENV_ROOT_ABSOLUTE/bin"
-	cp "$REPO_ROOT_ABSOLUTE/bin/LVMergeWrapper.sh" "$ENV_ROOT_ABSOLUTE/bin"
+	cp "${REPO_ROOT_ABSOLUTE}/bin/LVCompareWrapper.sh" "${ENV_ROOT_ABSOLUTE}/bin"
+	cp "${REPO_ROOT_ABSOLUTE}/bin/LVGitKExternalDiffWrapper.bat" "${ENV_ROOT_ABSOLUTE}/bin"
+	cp "${REPO_ROOT_ABSOLUTE}/bin/LVMergeWrapper.sh" "${ENV_ROOT_ABSOLUTE}/bin"
 
-	cp "$REPO_ROOT_ABSOLUTE/etc/LVConfig.sh" "$ENV_ROOT_ABSOLUTE/etc"
+	cp "${REPO_ROOT_ABSOLUTE}/etc/LVConfig.sh" "${ENV_ROOT_ABSOLUTE}/etc"
+	cp "${REPO_ROOT_ABSOLUTE}/etc/LVDetect.sh" "${ENV_ROOT_ABSOLUTE}/etc"
 }
 
 # Update git attributes stored in $1
@@ -55,16 +56,16 @@ function do_git_config {
 	$1 diff.labview.command "LVCompareWrapper.sh"
 	$1 diff.labview.tool labview
 	$1 diff.labview.guitool labview
-	$1 difftool.labview.cmd "LVCompareWrapper.sh \"\$LOCAL\" \"\$REMOTE\""
+	$1 difftool.labview.cmd "LVCompareWrapper.sh \"\${LOCAL}\" \"\${REMOTE}\""
 	$1 difftool.labview.prompt false
 	$1 merge.labview.tool labview
 	$1 merge.labview.name "LabView Merge Driver"
 	$1 merge.labview.driver "LVMergeWrapper.sh \"%O\" \"%B\" \"%A\""
-	$1 mergetool.labview.cmd "LVMergeWrapper.sh \"\$BASE\" \"\$REMOTE\" \"\$LOCAL\""
+	$1 mergetool.labview.cmd "LVMergeWrapper.sh \"\${BASE}\" \"\${REMOTE}\" \"\${LOCAL}\""
 	$1 mergetool.labview.trustExitCode true
-	if [ $OPT == "--global" ]
+	if [ ${OPT} == "--global" ]
 	then
-		$1 core.attributesfile "$ATTRIBUTES_FILE"
+		$1 core.attributesfile "${ATTRIBUTES_FILE}"
 	fi
 }
 
