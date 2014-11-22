@@ -31,7 +31,7 @@ function year_for_file_version {
 # Set LabViewBin to match or exceed the version used for VI in $1
 function detect_labview_version {
 	VIQueryVersion=VIQueryVersion
-	CanDetectLV=$(hash ${VIQueryVersion} 2>/dev/null)
+	CanDetectLV=$(which ${VIQueryVersion} 2>/dev/null)
 
 	if [ -n "${CanDetectLV}" ]; then
 		LVFileVersion="$(${VIQueryVersion} $(echo $1 | sed -e "${MKWINPATH}" | sed -e "${PATHFIX}"))"
