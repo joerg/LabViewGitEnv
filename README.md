@@ -3,14 +3,14 @@ LabViewGitEnv
 
 This represents everything that is needed to hold your LabVIEW projects under version control with GIT. With this you can configure GIT to use LabVIEW's diff and merge tools to play with your projects. Currently only .vi files are supported others may be coming soon.
 
-To view the actual code switch to the branch according to your operating system. Currently only Windows is supported, but porting this to linux or Mac should be fairly easy. Please contact me if you plan to do so.
+To view the actual code switch to the branch according to your operating system. Currently only Windows is supported, but porting this to Linux or Mac should be fairly easy. Please contact me if you plan to do so.
 
 Usage
 =====
 
-There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for linux, mac and Windows.
+There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for Linux, Mac and Windows.
 
-In order to run this you will need LabVIEW, GIT and bash which comes with msysgit for Windows users and should be preinstalled on any *nix system.
+In order to run this you will need LabVIEW, GIT, and bash, which comes with msysgit for Windows users and should be preinstalled on any *nix system.
 
 Usage on Windows
 ----------------
@@ -20,7 +20,7 @@ Usage on Windows
 To download and install LabViewGitEnv for every GIT user on your system, open a GIT Bash shell and issue the following commands
 
 	mkdir -p /c/repos/other && cd /c/repos/other
-	git clone -b windows git://github.com/wireddown/LabViewGitEnv.git
+	git clone -b windows git://github.com/joerg/LabViewGitEnv.git
 	cd LabViewGitEnv
 	bin/LVBootstrap.sh --system
 
