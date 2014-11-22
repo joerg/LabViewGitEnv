@@ -33,7 +33,7 @@ function detect_labview_version {
 	VIQueryVersion=VIQueryVersion
 	CanDetectLV=$(hash ${VIQueryVersion} 2>/dev/null)
 
-	if [ -n ${CanDetectLV} ]; then
+	if [ -n "${CanDetectLV}" ]; then
 		LVFileVersion="$(${VIQueryVersion} $(echo $1 | sed -e "${MKWINPATH}" | sed -e "${PATHFIX}"))"
 		MinLVVersion=$(year_for_file_version ${LVFileVersion})
 
