@@ -32,7 +32,9 @@ which will bring up [LVMerge.exe](http://zone.ni.com/reference/en-XX/help/371361
 
 Just edit the merged vi if necessary, save it and press close, and GIT will automagically create a nice merge commit.
 
-**Attention**: When calling
+##### Attention
+
+When calling
 
 	git merge feature master
 
@@ -57,19 +59,20 @@ LabViewGitEnv can automatically detect your version of LabVIEW if you have [VIKi
 
 If you followed this section, you can skip the installation and configuration sections. However, if you use **GIT Gui**, there are few more settings to configure, and you can find them in the sections below.
 
-1. Install LabViewGitEnv
-========================
+Full Instructions
+=================
+
+## 1. Install LabViewGitEnv
 
 There are (or should be) four branches. The one you are seeing here (master) should be fairly empty, the other ones represent everything that is needed for Linux, Mac and Windows.
 
 In order to run this you will need LabVIEW, GIT, and bash, which comes with msysgit for Windows users and should be preinstalled on any *nix system.
 
-Installation on Windows
------------------------
+### Installation on Windows
 
 You can install this system wide or per user. If you have administrative rights, I suggest installing it system wide.
 
-### System Wide
+##### System Wide
 
 Open GIT Bash as Administrator and issue the following commands
 
@@ -83,7 +86,7 @@ If you are planning to use **GIT Gui**, open cmd.exe as Administrator and issue 
 
 , where `GIT_INSTALL_PATH` mostly is something like C:\Programme Files\Git.
 	
-### Per User
+##### Per User
 
 Open GIT Bash and issue the following commands
 
@@ -97,15 +100,13 @@ If you are planning to use **GIT Gui**, open cmd.exe and issue the following com
 
 , where `USER_NAME` is your windows user name.
 
-Installation on Linux and Mac
------------------------------
+### Installation on Linux and Mac
 
 Work on this is not done yet, but I suppose it should be pretty simple to do so. If you are using LabVIEW on Linux or Mac and want to use it with GIT, then please contact me and we can surely figure this out pretty fast.
 
-2. Configure LabViewGitEnv
-==========================
+## 2. Configure LabViewGitEnv
 
-### GIT
+##### GIT
 
 To configure GIT to use LabViewGitEnv, just open Git Bash on Windows or any Shell on Linux and Mac and issue the following
 
@@ -122,7 +123,7 @@ Configures user specific settings.
 	--local
 Configures the Repository you are currently in. Beware: This does not get propagated through a push/pull.
 
-### LabVIEW
+##### LabVIEW
 
 LabViewGitEnv can automatically detect your version of LabVIEW to use for diffs and merges if you have [VIKit](https://github.com/wireddown/VIKit) installed.
 
@@ -135,15 +136,13 @@ If you can't find those two, you may use the following commands to search throug
 
 The first one will search for your LabViewBin, the second one will search for your LabViewShared (be sure to only use the part of the path till the Shared folder without the trailing slash).
 
-GIT Gui and other graphical tools
----------------------------------
+##### GIT Gui and other graphical tools
 
 Full support is currently only given for **GIT Gui**. If you have set your Path variable according to the installation instructions, almost everything will work out of the box.
 
 To Diff LabVIEW files you have to open gitk and configure one more option. On Windows, open GIT Gui and view some project tree to open gitk. In gitk select Edit -> Options and choose the installed LVGitKExternalDiffWrapper.
 
-Updating LabViewGitEnv
-======================
+## 3. Update LabViewGitEnv
 
 To update, you just have to open a GIT Bash, go to the folder you installed it to ( /usr/local for system wide installs, ~ for per user installs ) and issue the following commands
 
@@ -155,11 +154,13 @@ To update, you just have to open a GIT Bash, go to the folder you installed it t
 	git stash pop
 	LVInit.sh (--system|--global|--local)
 
-The last command is just needed in case some changes happened for git-config. However, you should always run this to make sure everything is configured corretly.
+The last command is just needed in case some changes happened for git-config. However, you should always run this to make sure everything is configured correctly.
 
 Copyright
 =========
 
 Copyright (c) 2011 Jörg Herzinger, see LICENSE for details.
 
-Copyright (c) 2014 Joe Friedrichsen
+##### Contributors:
+
+* Joe Friedrichsen, 2014
