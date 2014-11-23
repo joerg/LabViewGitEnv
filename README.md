@@ -144,7 +144,7 @@ To Diff LabVIEW files you have to open gitk and configure one more option. On Wi
 
 ## 3. Update LabViewGitEnv
 
-To update, you just have to open a GIT Bash, go to the folder you installed it to ( /usr/local for system wide installs, ~ for per user installs ) and issue the following commands
+Open a GIT Bash, go to the folder you installed it to ( /usr/local for system wide installs, ~ for per user installs, or /c/repos/other/LabViewGitEnv for Quick Start installs), and issue the following commands:
 
 	git stash save "local changes"
 	git checkout windows
@@ -152,9 +152,16 @@ To update, you just have to open a GIT Bash, go to the folder you installed it t
 	git checkout local
 	git rebase windows local
 	git stash pop
-	LVInit.sh (--system|--global|--local)
 
-The last command is just needed in case some changes happened for git-config. However, you should always run this to make sure everything is configured correctly.
+Finally, one more command is needed in case some changes happened for git-config. However, you should always run this to make sure everything is configured correctly:
+
+##### Windows Quick Start
+
+	bin/LVBootstrap.sh --system
+
+##### Full Setup
+
+	LVInit.sh (--system|--global|--local)
 
 Copyright
 =========
