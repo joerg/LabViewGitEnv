@@ -108,14 +108,14 @@ Work on this is not done yet, but I suppose it should be pretty simple to do so.
 
 ##### GIT
 
-To configure GIT to use LabViewGitEnv, just open Git Bash on Windows or any Shell on Linux and Mac and issue the following
+To configure GIT to use LabViewGitEnv, just open Git Bash on Windows or any Shell on Linux and Mac and issue
+
+	LVInit.sh --system
+Cofigures GIT system wide. You need administrative rights to do that, so on Windows you need to have Git Bash opened as Administrator and on Linux and Mac you have to be root or use sudo. This is recommended since GIT will be configured to only use LabViewGitEnv for LabVIEW file types. Then issue
 
 	LVInit.sh OPTION
 
-where OPTION can be one of the following
-
-	--system
-Cofigures GIT system wide. You need administrative rights to do that, so on Windows you need to have Git Bash opened as Administrator and on Linux and Mac you have to be root or use sudo. This is recommended since GIT will be configured to only use LabViewGitEnv for LabVIEW file types.
+where OPTION can be one of the following:
 
 	--global
 Configures user specific settings.
